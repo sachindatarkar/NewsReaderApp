@@ -5,3 +5,4 @@ Add Two tab one for News list and one for Bookmark
 Show article image, title, description and time 
 Written Unit Test case for service class and view model and model
 Use URLSession for calling Api And use combine in view model
+For read more news open WebView And load newsURL 
