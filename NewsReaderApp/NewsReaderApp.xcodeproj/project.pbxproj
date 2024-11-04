@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B33CD2BB2CD8E7B50043C10A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CD2BA2CD8E7B50043C10A /* APIError.swift */; };
 		B351708A2CD6054900D929F3 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35170892CD6054900D929F3 /* BookmarkViewModel.swift */; };
 		B351708C2CD60A3E00D929F3 /* BookmarkTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351708B2CD60A3E00D929F3 /* BookmarkTabView.swift */; };
 		B35170902CD6126500D929F3 /* EmptyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351708F2CD6126500D929F3 /* EmptyPlaceholderView.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B33CD2BA2CD8E7B50043C10A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		B35170892CD6054900D929F3 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		B351708B2CD60A3E00D929F3 /* BookmarkTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTabView.swift; sourceTree = "<group>"; };
 		B351708F2CD6126500D929F3 /* EmptyPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholderView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				B3AB1B592CD28ECB00D4DB44 /* APIManager.swift */,
 				B35170CA2CD65F9800D929F3 /* MockNewsService.swift */,
+				B33CD2BA2CD8E7B50043C10A /* APIError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				B351708A2CD6054900D929F3 /* BookmarkViewModel.swift in Sources */,
 				B3744AD32CD38F4000CB6E02 /* DataStore.swift in Sources */,
 				B3744AD52CD3907500CB6E02 /* WebView.swift in Sources */,
+				B33CD2BB2CD8E7B50043C10A /* APIError.swift in Sources */,
 				B3AB1B5C2CD28FF500D4DB44 /* Category.swift in Sources */,
 				B35170902CD6126500D929F3 /* EmptyPlaceholderView.swift in Sources */,
 				B3AB1B5A2CD28ECB00D4DB44 /* APIManager.swift in Sources */,

@@ -15,17 +15,38 @@ protocol NewsServiceProtocol {
 
 class NewsService: NewsServiceProtocol {
     private let apiKey = "8c1a6e5f68894e818ff42f7f2f4187ac"
+    private let urlSession: URLSession
+    private let decoder: JSONDecoder
+    
+    init(urlSession: URLSession = .shared, decoder: JSONDecoder = JSONDecoder()) {
+        self.urlSession = urlSession
+        self.decoder = decoder
+    }
     
     func fetchNews(category: String) -> AnyPublisher<[Article], Error> {
         let urlString = generateNewsURL(from: category)
         guard let url = URL(string: urlString) else {
-            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+            return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: NewsResponse.self, decoder: JSONDecoder())
-            .map { $0.articles! }
+        return urlSession.dataTaskPublisher(for: url)
+            .tryMap { output in
+                guard let response = output.response as? HTTPURLResponse, 200..<300 ~= response.statusCode else {
+                    throw APIError.invalidResponse
+                }
+                return output.data
+            }
+            .decode(type: NewsResponse.self, decoder: decoder)
+            .mapError { error in
+                if let apiError = error as? APIError {
+                    return apiError
+                } else {
+                    return APIError.decodingError(error)
+                }
+            }
+            .map { response in
+                response.articles ?? []
+            }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
