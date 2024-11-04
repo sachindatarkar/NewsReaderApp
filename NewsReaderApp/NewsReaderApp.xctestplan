@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "6065E924-D25B-4326-91A9-4E6739A4A0B3",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "addressSanitizer" : {
+          "detectStackUseAfterReturn" : true,
+          "enabled" : true
+        }
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "addressSanitizer" : {
+      "enabled" : true
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:NewsReaderApp.xcodeproj",
+      "identifier" : "B3AB1B2D2CD2589C00D4DB44",
+      "name" : "NewsReaderApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:NewsReaderApp.xcodeproj",
+        "identifier" : "B351709B2CD61DBB00D929F3",
+        "name" : "NewsReaderAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}
